@@ -1,21 +1,30 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
+
 
 const Client = () => {
 
-  const goToHome = () => {
-    Actions.home()
-  }
 
   return (
-    <div>
-      <p>This is the client page</p>
-      <TouchableOpacity style = {{ margin: 128 }} onPress = {goToHome}>
-        <Text>click to go home</Text>
+    <View style={styles.clientWrapper}>
+        <TouchableOpacity>
+          <Text style={styles.clientText}>Client Land</Text>
       </TouchableOpacity>
-    </div>
+    </View>
   )
 }
+
+  const styles = StyleSheet.create({
+    clientWrapper: {
+      flex: 1,
+      backgroundColor: 'lightblue',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    clientText: {
+      fontSize: 50,
+      color: 'firebrick'
+    }
+  });
 
 export default Client;

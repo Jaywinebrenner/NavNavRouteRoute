@@ -1,21 +1,27 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
+
 
 const Pilot = () => {
-  
-  const goToHome = () => {
-    Actions.home()
-  }
 
   return (
-    <div>
-      <p>This is the pilot page</p>
-      <TouchableOpacity style = {{ margin: 128 }} onPress = {goToHome}>
-        <Text>click to go home</Text>
-      </TouchableOpacity>
-    </div>
+    <View style={styles.pilotWrapper}>
+        <Text style={styles.pilotText}>Pilot Place</Text>
+    </View>
   )
 }
+
+const styles = StyleSheet.create({
+  pilotWrapper: {
+    flex: 1,
+    backgroundColor: 'lightgreen',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  pilotText: {
+    fontSize: 50,
+    color: 'firebrick'
+  }
+});
 
 export default Pilot;
